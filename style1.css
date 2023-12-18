@@ -111,7 +111,7 @@ h1{
     align-items: center;
     margin: 10px 25px;
     padding: 2px;
-    width: 70%; /* Set to 80% of the screen width */
+    width: 70%; /* Set to 70% of the screen width */
     left: 0px;
 }
 #submit{
