@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const init = document.querySelector('.initialize');
     const condi = document.querySelector('.condition');
     const upda = document.querySelector('.updation');
+    const state = document.querySelector('.statement');
+    const complex = document.querySelector('.time-complexity');
     var i = 0; // Start i with 0 initially
-    
-    while(i!=3){
-        addLines();
-    }
+
     function addLines() {
+        if(i<3){
         const newLine = document.createElement('div');
         newLine.textContent = 'i = '+i;
         tableDiv.appendChild(newLine);
@@ -33,16 +33,33 @@ document.addEventListener("DOMContentLoaded", function () {
             newLine2.textContent = i+' < n   ----> true';
             tableDiv.appendChild(newLine2);
             condi.style.backgroundColor = 'yellow';
-            i++;
             setTimeout(function() {
                 condi.style.backgroundColor = ''; // Set to an empty string to revert to default
-                const newLine3 = document.createElement('div');
-                newLine3.textContent = 'i = '+i;
-                tableDiv.appendChild(newLine3);
-                upda.style.backgroundColor = 'yellow';
-                // Call addLines function recursively
-                setTimeout(addLines, 3000);
+                state.style.backgroundColor = 'yellow';
+                if (i === 0) {
+                    complex.innerHTML = 'O(1)';
+                } else {
+                    complex.innerHTML += ' + O(1)';
+                }
+                setTimeout(function() {
+                    state.style.backgroundColor = ''; 
+                    const newLine3 = document.createElement('div');
+                    newLine3.textContent = i+'++';
+                    i++;
+                    tableDiv.appendChild(newLine3);
+                    upda.style.backgroundColor = 'yellow';
+                    // Call addLines function recursively
+                    setTimeout(function() {
+                        upda.style.backgroundColor = '';
+                    }, 3000);
+                    setTimeout(addLines, 3000);
+                }, 3000);
+                 
             }, 3000);
+
+            
         }, 3000);
     }
+    }
+    addLines();
 });
