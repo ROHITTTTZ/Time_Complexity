@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const newLine = document.createElement('div');
             newLine.textContent = 'i = ' + '(n - 1)';
             tableDiv.appendChild(newLine);
-
+            
             setTimeout(function () {
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = '(n - 1)' + ' < ' + 'n' + '   ----> true';
@@ -65,14 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 condi.style.backgroundColor = 'yellow';
                 setTimeout(function () {
                     condi.style.backgroundColor = '';
-                    const newLine3 = document.createElement('div');
-                    newLine3.textContent = '(n - 1)' + '++';
-                    tableDiv.appendChild(newLine3);
                     state.style.backgroundColor = 'yellow';
-                    i++;
-                    setTimeout(function () {
-                        condi.style.backgroundColor = ''; // Reset condition block color
-                        state.style.backgroundColor = ''; // Reset statement block color
+                    complex.innerHTML += ' + O(n-1)'
+                    setTimeout(function () {// Reset condition block color
+                        state.style.backgroundColor = ''; 
+                        const newLine3 = document.createElement('div');
+                        newLine3.textContent = '(n - 1)' + '++';
+                        i++;
+                        upda.style.backgroundColor = 'yellow';
+                        tableDiv.appendChild(newLine3);
+                                                    // Reset statement block color
                         setTimeout(addLines, 1000); // continue with the next iteration after 1 second
                     }, 2000); // Wait for 2 seconds before resetting color
                 }, 2000); // Wait for 2 seconds before adding "(n - 1)++"
@@ -80,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (i === n + 2) {
             const newLine = document.createElement('div');
             setTimeout(function () {
+                upda.style.backgroundColor = '';
                 newLine.textContent = 'i = ' + 'n';
                 tableDiv.appendChild(newLine);
                 setTimeout(function () {
