@@ -20,17 +20,29 @@ document.addEventListener("DOMContentLoaded", function () {
     var i = 0; // Start i with 0 initially
 
     function addLines() {
-        if(i<3){
-        const newLine = document.createElement('div');
-        newLine.textContent = 'i = '+i;
-        tableDiv.appendChild(newLine);
+        if(i<5){
+            if(i==3){
+                const newLine = document.createElement('div');
+            newLine.textContent = 'i = (n-1)';
+            tableDiv.appendChild(newLine);
+            }
+            else{
+            const newLine = document.createElement('div');
+            newLine.textContent = 'i = '+i;
+            tableDiv.appendChild(newLine);
+            }
         if(i==0){
             init.style.backgroundColor = 'yellow';
         }
         setTimeout(function() {
             init.style.backgroundColor = ''; // Set to an empty string to revert to default
             const newLine2 = document.createElement('div');
-            newLine2.textContent = i+' < n   ----> true';
+            if(i==3){
+                newLine2.textContent = '(n-1) < n   ----> true';    
+            }
+            else{
+                newLine2.textContent = i+' < n   ----> true';
+            }
             tableDiv.appendChild(newLine2);
             condi.style.backgroundColor = 'yellow';
             setTimeout(function() {
@@ -44,9 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(function() {
                     state.style.backgroundColor = ''; 
                     const newLine3 = document.createElement('div');
-                    newLine3.textContent = i+'++';
+                    if(i==3){
+                        newLine3.textContent = '(n-1)++';
+                    }
+                    else{
+                        newLine3.textContent = i+'++';
+                    }
                     i++;
                     tableDiv.appendChild(newLine3);
+                    tableDiv.appendChild(document.createElement('br'));
                     upda.style.backgroundColor = 'yellow';
                     // Call addLines function recursively
                     setTimeout(function() {

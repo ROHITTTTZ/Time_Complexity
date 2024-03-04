@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(function () {
                             upda.style.backgroundColor = '';
                             addLines();
-                        }, 3000);
-                    }, 3000);
+                        }, 2000);
+                    }, 2000);
 
-                }, 3000);
+                }, 2000);
 
 
-            }, 3000);
+            }, 2000);
         } else if (i === n) {
             tableDiv.innerHTML += "<div>.<br>.<br>.<br></div>";
             i++;
@@ -62,12 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = '(n - 1)' + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
-
+                condi.style.backgroundColor = 'yellow';
                 setTimeout(function () {
+                    condi.style.backgroundColor = '';
                     const newLine3 = document.createElement('div');
                     newLine3.textContent = '(n - 1)' + '++';
                     tableDiv.appendChild(newLine3);
-
+                    state.style.backgroundColor = 'yellow';
                     i++;
                     setTimeout(function () {
                         condi.style.backgroundColor = ''; // Reset condition block color
@@ -78,14 +79,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000); // Wait for 2 seconds before adding "(n - 1) < n"
         } else if (i === n + 2) {
             const newLine = document.createElement('div');
-            newLine.textContent = 'i = ' + 'n';
-            tableDiv.appendChild(newLine);
+            setTimeout(function () {
+                newLine.textContent = 'i = ' + 'n';
+                tableDiv.appendChild(newLine);
+                setTimeout(function () {
+                    condi.style.backgroundColor = 'yellow';
+                    const newLine2 = document.createElement('div');
+                    tableDiv.appendChild(newLine2);
+                    newLine2.textContent = 'n' + ' < ' + 'n' + '   ----> false';
+                    complex.innerHTML = 'Total Time Complexity: O(n)';
+                }, 2000); // Wait for 2 seconds before resetting color
+                setTimeout(function () {
+                    condi.style.backgroundColor = '';
+                }, 2000);
+                
+            }, 2000);
+            
 
-            const newLine2 = document.createElement('div');
-            newLine2.textContent = 'n' + ' < ' + 'n' + '   ----> false';
-            tableDiv.appendChild(newLine2);
+            
 
-            complex.innerHTML = 'Total Time Complexity: O(n)';
+            
         }
     }
 
