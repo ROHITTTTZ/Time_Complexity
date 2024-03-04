@@ -14,14 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const newLine = document.createElement('div');
             newLine.textContent = 'i = ' + i;
             tableDiv.appendChild(newLine);
-            if (i == 0) {
-                init.style.backgroundColor = 'yellow';
-            }
+
+            init.style.backgroundColor = 'yellow';
+
             setTimeout(function () {
                 init.style.backgroundColor = ''; // Set to an empty string to revert to default
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = i + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
+                init.style.backgroundColor = '';
                 condi.style.backgroundColor = 'yellow';
                 setTimeout(function () {
                     condi.style.backgroundColor = ''; // Set to an empty string to revert to default
@@ -57,19 +58,29 @@ document.addEventListener("DOMContentLoaded", function () {
             const newLine = document.createElement('div');
             newLine.textContent = 'i = ' + '(n - 1)';
             tableDiv.appendChild(newLine);
+            init.style.backgroundColor = 'yellow';
+
 
             setTimeout(function () {
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = '(n - 1)' + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
+                init.style.backgroundColor = '';
+                condi.style.backgroundColor = 'yellow'; 
 
                 setTimeout(function () {
                     const newLine3 = document.createElement('div');
                     newLine3.textContent = '(n - 1)' + '++';
                     tableDiv.appendChild(newLine3);
+                    condi.style.backgroundColor = ''; // Reset condition block color
+                    upda.style.backgroundColor = 'yellow';
 
                     i++;
+                    upda.style.backgroundColor = '';
+                    state.style.backgroundColor = 'yellow';
+                    complex.innerHTML += ' ............ + O(1)';
                     setTimeout(function () {
+                        
                         condi.style.backgroundColor = ''; // Reset condition block color
                         state.style.backgroundColor = ''; // Reset statement block color
                         setTimeout(addLines, 1000); // continue with the next iteration after 1 second
