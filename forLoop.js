@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const upda = document.querySelector('.updation');
     const state = document.querySelector('.statement');
     const complex = document.querySelector('.time-complexity');
-    let n; // Initialize n variable
+    const n = 3; // Set n directly to 3
     let i = 0; // Initialize i variable
 
     function addLines() {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(function () {
                 init.style.backgroundColor = ''; // Set to an empty string to revert to default
                 const newLine2 = document.createElement('div');
-                newLine2.textContent = i + ' < ' + n + '   ----> true';
+                newLine2.textContent = i + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
                 condi.style.backgroundColor = 'yellow';
                 setTimeout(function () {
@@ -49,9 +49,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             }, 3000);
-        }
-        else {
-            // Display total time complexity
+        } else if (i === n) {
+            tableDiv.innerHTML += "<div>.<br>.<br>.<br></div>";
+            i++;
+            setTimeout(addLines, 1000); // continue with the next iteration after 1 second
+        } else if (i === n + 1) {
+            const newLine = document.createElement('div');
+            newLine.textContent = 'i = ' + '(n - 1)';
+            tableDiv.appendChild(newLine);
+
+            setTimeout(function () {
+                const newLine2 = document.createElement('div');
+                newLine2.textContent = '(n - 1)' + ' < ' + 'n' + '   ----> true';
+                tableDiv.appendChild(newLine2);
+
+                setTimeout(function () {
+                    const newLine3 = document.createElement('div');
+                    newLine3.textContent = '(n - 1)' + '++';
+                    tableDiv.appendChild(newLine3);
+
+                    i++;
+                    setTimeout(function () {
+                        condi.style.backgroundColor = ''; // Reset condition block color
+                        state.style.backgroundColor = ''; // Reset statement block color
+                        setTimeout(addLines, 1000); // continue with the next iteration after 1 second
+                    }, 2000); // Wait for 2 seconds before resetting color
+                }, 2000); // Wait for 2 seconds before adding "(n - 1)++"
+            }, 2000); // Wait for 2 seconds before adding "(n - 1) < n"
+        } else if (i === n + 2) {
+            const newLine = document.createElement('div');
+            newLine.textContent = 'i = ' + 'n';
+            tableDiv.appendChild(newLine);
+
+            const newLine2 = document.createElement('div');
+            newLine2.textContent = 'n' + ' < ' + 'n' + '   ----> false';
+            tableDiv.appendChild(newLine2);
+
             complex.innerHTML = 'Total Time Complexity: O(n)';
         }
     }
@@ -59,12 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (submitButton) {
         submitButton.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting (if it's inside a form)
-            n = parseInt(document.getElementById('nInput').value); // Get value of n from input field
             tableDiv.innerHTML = "Current Value of i"; // Clear tableDiv content
             addLines(); // Start animation
         });
     } else {
-        alert("Not Clicked..");
+        alert("Button not found..");
         return false;
     }
 });
