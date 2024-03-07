@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById('inputForm');
-    const tableDiv = document.querySelector('.table');
+    const tableDiv = document.querySelector('.content');
     const init = document.querySelector('.initialize');
     const condi = document.querySelector('.condition');
     const upda = document.querySelector('.updation');
     const state = document.querySelector('.statement');
     const complex = document.querySelector('.time-complexity');
+    const time_header = document.querySelector('.time-header');
     const n = 3; // Set n directly to 3
     let i = 0; // Initialize i variable
 
@@ -27,9 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     condi.style.backgroundColor = ''; // Set to an empty string to revert to default
                     state.style.backgroundColor = 'yellow';
                     if (i === 0) {
-                        complex.innerHTML = 'O(1)';
+                        complex.innerHTML = '1';
+                        time_header.style.visibility = "visible";
                     } else {
-                        complex.innerHTML += ' + O(1)';
+                        complex.innerHTML += ' + 1';
                     }
                     setTimeout(function () {
                         state.style.backgroundColor = '';
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000);
         } else if (i === n) {
             tableDiv.innerHTML += "<div>.<br>.<br>.<br></div>";
+            complex.innerHTML+= ' + . . .';
             i++;
             setTimeout(addLines, 1000); // continue with the next iteration after 1 second
         } else if (i === n + 1) {
@@ -66,11 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(function () {
                     condi.style.backgroundColor = '';
                     state.style.backgroundColor = 'yellow';
-                    complex.innerHTML += ' + O(n-1)'
+                    complex.innerHTML += ' + n'
                     setTimeout(function () {// Reset condition block color
                         state.style.backgroundColor = ''; 
                         const newLine3 = document.createElement('div');
                         newLine3.textContent = '(n - 1)' + '++';
+                       
                         i++;
                         upda.style.backgroundColor = 'yellow';
                         tableDiv.appendChild(newLine3);
@@ -108,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (submitButton) {
         submitButton.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting (if it's inside a form)
-            tableDiv.innerHTML = "Current Value of i"; // Clear tableDiv content
+            tableDiv.innerHTML = '<br>'; // Clear tableDiv content
             addLines(); // Start animation
         });
     } else {
