@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="forLoop.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="forLoop.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <title>Simple For Loop</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container1">
-        <div class="algorithm">
-            <pre class="algo">
-            for(<span class="initialize">i=0</span>; <span class="condition">i&lt;n</span>; <span class="updation">i++</span>){
+      <div class="algorithm">
+        <pre class="algo">
+            for <span class="brackets">(</span><span class="initialize">i=0</span>; <span class="condition">i&lt;n</span>; <span class="updation">i++</span><span class="brackets">){</span> 
                 <div class="statement">
                 statement;
                 </div>
-
-            }
+            <span class="brackets">}</span>
             </pre>
+            <i class="bi bi-brightness-low-fill" id="toggleDark"></i>
+      </div>
+      <div class="table">
+        <div class="heading">
+          <h2 id="current_value_heading">Current Value of i :</h2>
         </div>
-        <div class="table">
-            <div class="heading">
-                <h2 id="current_value_heading">Current Value of i</h2>
-            </div>
-           <div class="content">
-            
-            </div>
-            <form id="inputForm">
-                <input type="submit" value="Animate" name="submit">
-            </form>
-        </div>
+        <div class="content"></div>
+        <form id="inputForm">
+          <input type="submit" value="Animate" name="submit"/>
+        </form>
+        
+      </div>
     </div>
-    <div class="time-header">
-        Number of Times the Statement gets executed:
-    </div>
-    <div class="time-complexity"> 
-        Number of Times the Statement gets executed
+    <div class="time-header">Number of Times the Statement gets executed:</div>
+    <div class="time-complexity">
+      Number of Times the Statement gets executed
     </div>
     <script src="forLoop.js"></script>
-</body>
+  </body>
 </html>

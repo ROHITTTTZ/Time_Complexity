@@ -16,17 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
             newLine.textContent = 'i = ' + i;
             tableDiv.appendChild(newLine);
             if (i == 0) {
-                init.style.backgroundColor = 'yellow';
+                init.style.backgroundColor = '#474747';
             }
             setTimeout(function () {
                 init.style.backgroundColor = ''; // Set to an empty string to revert to default
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = i + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
-                condi.style.backgroundColor = 'yellow';
+                condi.style.backgroundColor = '#474747';
                 setTimeout(function () {
                     condi.style.backgroundColor = ''; // Set to an empty string to revert to default
-                    state.style.backgroundColor = 'yellow';
+                    state.style.backgroundColor = '#474747';
                     if (i === 0) {
                         complex.innerHTML = '1';
                         time_header.style.visibility = "visible";
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         newLine3.textContent = i + '++';
                         i++;
                         tableDiv.appendChild(newLine3);
-                        upda.style.backgroundColor = 'yellow';
+                        upda.style.backgroundColor = '#474747';
                         // Call addLines function recursively
                         setTimeout(function () {
                             upda.style.backgroundColor = '';
@@ -65,10 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const newLine2 = document.createElement('div');
                 newLine2.textContent = '(n - 1)' + ' < ' + 'n' + '   ----> true';
                 tableDiv.appendChild(newLine2);
-                condi.style.backgroundColor = 'yellow';
+                condi.style.backgroundColor = '#474747';
                 setTimeout(function () {
                     condi.style.backgroundColor = '';
-                    state.style.backgroundColor = 'yellow';
+                    state.style.backgroundColor = '#474747';
                     complex.innerHTML += ' + n'
                     setTimeout(function () {// Reset condition block color
                         state.style.backgroundColor = ''; 
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         newLine3.textContent = '(n - 1)' + '++';
                        
                         i++;
-                        upda.style.backgroundColor = 'yellow';
+                        upda.style.backgroundColor = '#474747';
                         tableDiv.appendChild(newLine3);
                                                     // Reset statement block color
                         setTimeout(addLines, 1000); // continue with the next iteration after 1 second
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 newLine.textContent = 'i = ' + 'n';
                 tableDiv.appendChild(newLine);
                 setTimeout(function () {
-                    condi.style.backgroundColor = 'yellow';
+                    condi.style.backgroundColor = '#474747';
                     const newLine2 = document.createElement('div');
                     tableDiv.appendChild(newLine2);
                     newLine2.textContent = 'n' + ' < ' + 'n' + '   ----> false';
@@ -120,3 +120,55 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
     }
 });
+
+const toggle = document.getElementById("toggleDark");
+const body = document.querySelector('body');
+const algo = document.querySelector('.algorithm');
+const tbl = document.querySelector('.table');
+const tc = document.querySelector('.time-complexity');
+var submitButton = document.querySelector('input[type="submit"][name="submit"]');
+var th = document.querySelector('.time-header');
+
+toggle.addEventListener('click', function(){
+    this.classList.toggle('bi-moon-fill');
+    if(this.classList.toggle('bi-brightness-low-fill')){
+        body.style.background = '#333333';
+        algo.style.background = '#1E1E1E';
+        algo.style.color = '#BB86A1';
+        tbl.style.background = '#1E1E1E';
+        tbl.style.color = '#BB86A1';
+        tc.style.background = '#1E1E1E';
+        tc.style.color = 'palegreen';
+        th.style.color = 'palegreen';
+        submitButton.style.backgroundColor = '#1E1E1E';
+        submitButton.style.color = '#BB86A1';
+
+        submitButton.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#474747'; 
+        });
+        
+        submitButton.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#1E1E1E'; 
+        });
+    }
+    else{
+        body.style.background = '#ECF8F3';
+        algo.style.background = '#959572';
+        algo.style.color = 'green';
+        tbl.style.background = '#959572';
+        tbl.style.color = 'green';
+        tc.style.background = '#959572';
+        tc.style.color = 'black';
+        th.style.color = 'black';
+        submitButton.style.backgroundColor = '#959572';
+        submitButton.style.color = 'green';
+
+        submitButton.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#474747'; 
+        });
+        
+        submitButton.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#959572'; 
+        });
+    }
+})

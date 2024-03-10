@@ -1,4 +1,4 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,11 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color:#333333 ;
     font-size: xx-large;
 }
 .table{
-    font-size: large;
+    font-size: medium;
 }
 .container1 {
     display: flex;
@@ -22,10 +22,10 @@ body {
     display: flex;
     align-items: center;
     width: 50%;
-    background-color: aqua;
+    background-color:#1E1E1E;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    color: #BB86A1;
 }
 
 .pre {
@@ -33,30 +33,36 @@ body {
 }
 
 .table {
-    background-color: white;
+    background-color: #1E1E1E;
     width: 50%;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #BB86A1;
     border-radius: 10px;
     position: relative;
-    
+    font-family: monospace;
 }
 
 .time-header{
     height: 5vh;
-    padding-left: 1%;
+    padding-left: 2%;
     visibility: hidden;
     font-size: 1.5rem;
+    color: palegreen;
+    font-family: monospace;
 }
 .time-complexity {
-    background-color: green;
-    color: white;
-    height: 15vh;
+    background-color: #1E1E1E;
+    color: palegreen;
+    width: 97%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    font-family: monospace;
 }
 
 /* Animate button */
@@ -68,16 +74,17 @@ body {
 
 #inputForm input[type="submit"] {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    color: #BB86A1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: monospace;
+    background-color: #1E1E1E;
 }
 
 #inputForm input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #474747;
 }
 
 /* Add some margin to elements */
@@ -91,18 +98,23 @@ body {
 }
 
 /* Highlight individual parts of the code */
-.initialize {
-    background-color: rgb(255, 255, 255);
-}
-
-.condition {
-    background-color: #ffffff;
-}
-
-.updation {
-    background-color: #ffffff;
+.initialize , .condition , .updation {
+    color: #9CD9FE;
 }
 
 .statement {
-    background-color: #fafcfe;
+    color: #2383be;
+}
+
+.brackets{
+    color: #D7BF09;
+}
+
+i{
+    position: absolute;
+    left: 95vh;
+    top:6vh;
+    font-size: 2vw;
+    cursor: pointer;
+    color: white;
 }
