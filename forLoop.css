@@ -9,7 +9,7 @@ body {
     background-color:#333333 ;
     font-size: xx-large;
 }
-.table{
+.table{position: relative;
     font-size: medium;
 }
 .container1 {
@@ -110,6 +110,24 @@ body {
     color: #D7BF09;
 }
 
+.content-footer {
+    position: absolute;
+    background-color: #333333;
+    color: palegreen;
+    width: 94%;
+    bottom: 10%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 1; /* Ensure it stays above other content */
+    text-align: center; /* Center the text horizontally */
+}
 i{
     position: absolute;
     left: 95vh;
