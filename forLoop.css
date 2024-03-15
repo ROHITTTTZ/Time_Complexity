@@ -87,6 +87,34 @@ body {
     background-color: #474747;
 }
 
+/* Styling for table headers */
+th {
+    background-color: #474747;
+    color: #BB86A1;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling for table headers on hover */
+th:hover {
+    background-color: #333333;
+    cursor: pointer;
+}
+
+/* CSS for table data */
+td {
+    font-size: 18px; /* Adjust font size as needed */
+    text-align: center; /* Center the text horizontally */
+    padding: 10px; /* Add padding to provide spacing */
+}
+
+/* CSS for highlighting values in table */
+td.highlight {
+    background-color: yellow; /* Set the background color to yellow */
+}
+
 /* Add some margin to elements */
 .container1 > div {
     margin: 20px;
