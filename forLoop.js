@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const submitButton = document.getElementById('inputForm');
+    const submitButton = document.getElementById('inputForm'); // Get the submit button element
     const tableDiv = document.querySelector('.content');
     const init = document.querySelector('.initialize');
     const tbody = document.querySelector('.tbody');
@@ -109,6 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    
-    addLines();
+    // Add event listener to the submit button
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        addLines(); // Call the function to start the animation
+    });
 });
