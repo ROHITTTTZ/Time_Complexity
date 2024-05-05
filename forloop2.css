@@ -1,0 +1,238 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333333;
+    font-size: xx-large;
+}
+
+.table {
+    position: relative;
+    font-size: medium;
+}
+
+.container1 {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+}
+
+.algorithm {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    color: #BB86A1;
+}
+
+.pre {
+    font-size: 20px;
+}
+
+.table {
+    background-color: #1E1E1E;
+    width: 50%;
+    padding: 20px;
+    color: #BB86A1;
+    border-radius: 10px;
+    position: relative;
+    font-family: monospace;
+}
+
+.time-header {
+    height: 5vh;
+    padding-left: 2%;
+    visibility: hidden;
+    font-size: 1.5rem;
+    color: palegreen;
+    font-family: monospace;
+}
+
+.time-complexity {
+    background-color: #1E1E1E;
+    color: palegreen;
+    width: 97%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* Animate button */
+#inputForm {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#inputForm input[type="submit"] {
+    padding: 8px 40px; /* Increase padding to make button bigger */
+    color: #BB86A1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: monospace;
+    background-color: #1E1E1E;
+    font-size: large; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+}
+
+#inputForm input[type="submit"]:hover {
+    background-color: #474747;
+}
+
+/* Styling for table headers */
+th {
+    background-color: #474747;
+    color: #BB86A1;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling for table headers on hover */
+th:hover {
+    background-color: #333333;
+    cursor: pointer;
+}
+
+/* CSS for table data */
+td {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* CSS for highlighting values in table */
+td.highlight {
+    background-color: yellow;
+}
+
+/* Add some margin to elements */
+.container1 > div {
+    margin: 20px;
+}
+
+/* Styling for code snippet */
+.algo {
+    white-space: pre-wrap;
+}
+
+/* Highlight individual parts of the code */
+.initialize,
+.condition,
+.updation {
+    color: #9CD9FE;
+}
+
+.statement {
+    color: #2383be;
+}
+
+.brackets {
+    color: #D7BF09;
+}
+
+.content-footer {
+    position: absolute;
+    background-color: #333333;
+    color: palegreen;
+    width: 94%;
+    bottom: 10%;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace;
+    z-index: 1;
+    text-align: center;
+}
+
+i {
+    position: absolute;
+    left: 95vh;
+    top: 6vh;
+    font-size: 2vw;
+    cursor: pointer;
+    color: white;
+}
+
+/* Add media query for responsiveness */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: large; /* Adjust font size for better readability on smaller screens */
+  }
+
+  .container1 {
+    flex-direction: column; /* Change the layout to a single column on smaller screens */
+    height: auto; /* Remove fixed height */
+  }
+
+  .algorithm,
+  .table {
+    width: 100%; /* Occupy full width on smaller screens */
+    margin: 10px 0; /* Add some space between elements */
+  }
+
+  .algo {
+    font-size: 16px; /* Adjust code snippet font size for better readability */
+  }
+
+  i {
+    position: static; /* Reset position for brightness toggle */
+    margin: 10px auto; /* Center align the toggle button */
+    display: block; /* Ensure toggle button occupies full width */
+    font-size: 3vw; /* Adjust toggle button size */
+  }
+}
+/* Add media query for responsiveness */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: large; /* Adjust font size for better readability on smaller screens */
+  }
+
+  .container1 {
+    flex-direction: column; /* Change the layout to a single column on smaller screens */
+    height: auto; /* Remove fixed height */
+  }
+
+  .algorithm,
+  .table {
+    width: 90%; /* Occupy 90% of the width on smaller screens */
+    margin: 10px auto; /* Center the elements and add space around them */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in element's total width */
+  }
+
+  .algo {
+    font-size: 16px; /* Adjust code snippet font size for better readability */
+  }
+
+  i {
+    margin: 10px auto; /* Center align the toggle button */
+    display: block; /* Ensure toggle button occupies full width */
+    font-size: 3vw; /* Adjust toggle button size */
+  }
+
+  .time-header {
+    padding-left: 0; /* Remove left padding on smaller screens */
+  }
+}
+
