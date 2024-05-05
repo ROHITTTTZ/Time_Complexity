@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="forLoop3.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <title>Simple For Loop</title>
+  </head>
+  <body>
+    <div class="container1">
+      <div class="algorithm">
+        <pre class="algo">
+            for <span class="brackets">(</span><span class="initialize">i=0</span>; <span class="condition">i&lt;n</span>; <span class="updation">i+=2</span><span class="brackets">){</span> 
+                <div class="statement">
+                statement;
+                </div>
+            <span class="brackets">}</span>
+            </pre>
+            <i class="bi bi-brightness-low-fill" id="toggleDark"></i>
+      </div>
+      <div class="table">
+        <div class="heading">
+          <h2 id="current_value_heading"><center>Let us consider the value of 'n' to be 4</center></h2>
+        </div>
+        <br>
+        <div class="content">
+            <table >
+                <thead>
+                    <tr>
+                        <th>Current value of i</th>
+                        <th>condition</th>
+                        <th>True/False</th>
+                        <th>Updation</th>
+                        <th>No.of times statement getting executed</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="content-footer">
+            <p></p>
+        </div>
+        <form id="inputForm">
+          <input type="submit" value="Animate" name="submit"/>
+        </form>
+        
+      </div>
+    </div>
+    <div class="time-header">Number of Times the Statement gets executed:</div>
+    <div class="time-complexity">
+      Number of Times the Statement gets executed
+    </div>
+    <script src="forloop3.js"></script>
+  </body>
+</html>
