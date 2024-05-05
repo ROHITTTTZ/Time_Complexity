@@ -118,32 +118,43 @@ i{
     cursor: pointer;
     color: white;
 }
+
 @media screen and (max-width: 767px) {
-    body {
-        font-size: medium; 
+    .container1 {
+        flex-direction: column;
+        height: auto;
     }
 
     .algorithm,
     .table {
-        padding: 10px; 
+        width: 100%;
+    }
+
+    .time-header {
+        visibility: visible;
     }
 
     .time-complexity {
-        font-size: 18px; 
+        order: 3;
+    }
+
+    .table {
+        order: 2;
     }
 
     .algorithm {
-        align-items: flex-start;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    body {
-        font-size: large; 
+        order: 1;
     }
 
-    .algorithm,
-    .table {
-        width: 100%; 
+    #inputForm {
+        position: static;
+        margin-top: 20px;
     }
+   
+    .content-footer {
+        position: static; /* Change position to static for smaller screens */
+        margin-top: 20px; /* Add margin to create space */
+        height: auto; /* Allow height to adjust based on content */
+    }
+    
 }
