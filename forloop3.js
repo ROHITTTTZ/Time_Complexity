@@ -10,11 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const complex = document.querySelector('.time-complexity');
     const time_header = document.querySelector('.time-header');
     const n = 4; // Set n directly to 3
-    let i = 0; // Initialize i variable
+    let i = 1; // Initialize i variable
     function theory1(value){
-        if(value==0){
-            contentFooter.innerHTML = '`i` is initialized to zero.';
-        }
         if(value==1){
             contentFooter.innerHTML = '`i` is initialized to a new value of one.';
         }
@@ -63,10 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(function () {
                         state.style.backgroundColor = '';
                         const newCell = document.createElement('td'); // Create a new table cell
-                        newCell.textContent = 'i = '+i + '+2';                       
+                        newCell.textContent = 'i = ' + i + '*2';                       
                         newRow.appendChild(newCell); // Append the cell to the row
-                        i+=2;
-                        contentFooter.innerHTML='`i` is incremented by 2 and updated with its new value '+i+' .';
+                        i *= 2;
+                        contentFooter.innerHTML='`i` is updated with its new value '+i+' by multiplying it by 2.';
                         tbody.appendChild(newRow); // Append the row to the tbody
                         const newCell1 = document.createElement('td');
                         newCell1.textContent = '1';
