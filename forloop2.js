@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var contentFooter = document.querySelector('.content-footer p');
     const complex = document.querySelector('.time-complexity');
     const time_header = document.querySelector('.time-header');
-    const n = 4; // Set n directly to 3
+    const n = 16; // Set n directly to 3
     let i = 1; // Initialize i variable
+    let k=1;
     function theory1(value){
         if(value==1){
             contentFooter.innerHTML = '`i` is initialized to a new value of one.';
@@ -66,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         contentFooter.innerHTML='`i` is updated with its new value '+i+' by multiplying it by 2.';
                         tbody.appendChild(newRow); // Append the row to the tbody
                         const newCell1 = document.createElement('td');
-                        newCell1.textContent = '1';
+                        newCell1.innerHTML = i +" = 2<sup>"+k+"</sup>";
+                        k++;
                         newRow.appendChild(newCell1); // Append the cell to the row
                         tbody.appendChild(newRow); // Append the row to the tbody
                         upda.style.backgroundColor = '#474747';
