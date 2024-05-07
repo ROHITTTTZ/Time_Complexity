@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const state = document.querySelector('.statement');
     var contentFooter = document.querySelector('.content-footer p');
     const complex = document.querySelector('.time-complexity');
+    var hiddenElement = document.querySelector('.hidden');
     const time_header = document.querySelector('.time-header');
-    const n = 16; // Set n directly to 3
+    const n = 4; // Set n directly to 3
     let i = 1; // Initialize i variable
     let k=1;
     function theory1(value){
@@ -23,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
             contentFooter.innerHTML = '`i` is initialized to a new value of three.';
         }
 
+    }
+
+    var j=0;
+    var txt;
+    function typewriter(txt){
+        if(j<txt.length){
+            time_header.innerHTML += txt.charAt(j);
+            j++;
+            setTimeout(function(){
+                typewriter(txt);
+            },80);
+        }
     }
 
     function addLines() {
@@ -53,11 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     condi.style.backgroundColor = ''; // Set to an empty string to revert to default
                     state.style.backgroundColor = '#474747';
                     if (i === 1) {
-                        complex.innerHTML = '1';
+                        complex.innerHTML = "2<sup>"+k+"</sup>";
                         time_header.style.visibility = "visible";
                     } else {
-                        complex.innerHTML += ' + 1';
+                        complex.innerHTML += " + 2<sup>"+k+"</sup>";
                     }
+                    
                     setTimeout(function () {
                         state.style.backgroundColor = '';
                         const newCell = document.createElement('td'); // Create a new table cell
@@ -112,7 +126,37 @@ document.addEventListener("DOMContentLoaded", function () {
                                 newCell3.textContent = '0';
                                 newRow.appendChild(newCell3); // Append the cell to the row
                                 tbody.appendChild(newRow);
-                                tc.innerHTML = 'Total Time Complexity: O(n)';
+                                complex.innerHTML="";
+                                contentFooter.innerHTML="";
+                                hiddenElement.style.display="block";
+                                setTimeout(function(){
+                                    complex.innerHTML = "so the time complexity is calculated as 2<sup>1</sup> + 2<sup>2</sup> + 2<sup>3</sup> + ... +2<sup>k</sup>";
+                                },2000);
+                                
+                                setTimeout(function(){
+                                    complex.innerHTML = "It will execute till 2<sup>k</sup> &nbsp;= n.";
+                                    setTimeout(function(){
+                                        complex.innerHTML = "2<sup>k</sup> &nbsp;= n, Now taking Log on both the sides...";
+                                        setTimeout(function(){
+                                            complex.innerHTML = "Log(2<sup>k</sup>) &nbsp;= log(n)";
+                                            setTimeout(function(){
+                                                complex.innerHTML = "kLog(2)=Log(n)";
+                                                setTimeout(function(){
+                                                    complex.innerHTML = "k = Log<sub>2</sub>(n)";
+                                                    setTimeout(function(){
+                                                        time_header.innerHTML="";
+                                                        complex.innerHTML="";
+                                                        typewriter("So the Time Complexity is..");
+                                                        setTimeout(function(){
+                                                            complex.innerHTML = "O(Log(n))";
+                                                        },2000);
+                                                    },3000);
+                                                },3000);
+                                            },3000);
+                                        },3000);
+                                    },3000);
+                                },5000);
+                                
                             }, 2000);
                         }, 2000);
                     }, 2000);

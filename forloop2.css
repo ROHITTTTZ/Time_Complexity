@@ -62,11 +62,12 @@ body {
     border-radius: 10px;
     height: 12vh;
     display: flex;
+    font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    font-family: monospace;
+    
 }
 
 /* Animate button */
